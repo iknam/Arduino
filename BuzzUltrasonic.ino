@@ -25,7 +25,7 @@ void loop()
   digitalWrite(trigPin, LOW);
   duration = pulseIn(echoPin, HIGH);
   distance = ((float)(340 * duration) / 1000) / 2;
-  delay(500); // Wait for 1000 millisecond(s)
+  delay(200); // Wait for 1000 millisecond(s)
 
   if(distance < 200)
   {
