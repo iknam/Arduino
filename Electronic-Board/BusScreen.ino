@@ -1,6 +1,7 @@
 /*
     2021 - 05 - 30
     LCD 가려진 문자열 당기고 다 표시되면 초기화
+    문제는 문자열이 길어지면 다음 라인으로 넘어감 내부 함수로는 표현이 어려울것 같다
     by iknam
 */
 #include <LiquidCrystal.h>
@@ -25,15 +26,22 @@ void loop()
       str = Serial.readString();
       Serial.println(str);
       lcd.clear();
+      //lcd.setCursor(0, 1);
       lcd.print(str);
       sLen = str.length();
   }
 
-  for(int i = 0; i < sLen - 16; i++)
-  {
+  if(sLen > 16){
+    for(int i = 0; i < sLen - 16; i++)
+   {
     lcd.scrollDisplayLeft();
-    delay(100);
+    delay(500);
   }
+    lcd.clear();
+    delay(500);
+    lcd.print(str);
+  }
+  
   delay(500);
-  lcd.clear();
+  lcd.print(str);
 }
