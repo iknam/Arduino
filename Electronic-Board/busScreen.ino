@@ -16,7 +16,7 @@ String str;
 void setup()
 {
   Serial.begin(9600);
-  lcd.begin(16, 2);
+  lcd.begin(16, 2);https://github.com/iknam/Arduino/blob/main/Electronic-Board/BusScreen.ino
 }
 
 void loop()
