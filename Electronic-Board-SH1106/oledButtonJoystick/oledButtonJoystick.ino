@@ -41,7 +41,7 @@ void loop(){
 int x = analogRead(A0);
 Serial.println(x);
     OLED_Display();
-    if(digitalRead(3) == LOW) {
+    if(digitalRead(3) == LOW || x <50) {
   display.print(F("Example ")); display.println("ABC");
   display.print(F("Example ")); display.println("ABC");
   }
